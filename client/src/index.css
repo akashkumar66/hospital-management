@@ -1,0 +1,11 @@
+body {
+  
+  min-height: 100vh;
+  /* padding: 15px; */
+  width: 100vw;
+ 
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

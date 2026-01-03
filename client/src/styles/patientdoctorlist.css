@@ -1,0 +1,259 @@
+/* === Grid Layout: 3 per row === */
+.doctor-grid {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+/* **** Grid for 3 cards per row **** */
+.doctor-card-wrapper {
+  flex: 1 1 calc(33.33% - 30px);
+  max-width: calc(33.33% - 30px);
+  margin: 10px;
+}
+
+/* BOX STYLE */
+.doctor-card-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 18px;
+  border: 1px solid #e3e8f5;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.25s ease-in-out;
+}
+
+.doctor-card-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+}
+
+/* IMAGE SECTION LEFT */
+.doctor-image-section {
+  width: 95px;
+  height: 95px;
+  flex-shrink: 0;
+}
+
+.doctor-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #dce6ff;
+}
+
+/* DETAILS RIGHT */
+.doctor-details-section {
+  width: 100%;
+}
+
+/* NAME + MENU */
+.doctor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.doctor-name a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+}
+
+.doctor-name a:hover {
+  color: #0e6bff;
+}
+
+/* SPECIALITY */
+.doctor-specialty {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* AVAILABILITY TEXT */
+.doctor-availability-text {
+  font-size: 14px;
+  color: #444;
+  margin-top: 6px;
+}
+
+/* FOOTER INFO */
+.doctor-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.doctor-fees {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2b2b2b;
+}
+
+.doctor-fees span {
+  color: #0056ff;
+}
+
+/* CALENDAR ICON */
+.calendar-icon {
+  font-size: 24px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.calendar-icon:hover {
+  transform: scale(1.1);
+}
+
+/* MENU BUTTON */
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* DROPDOWN */
+.menu-wrapper {
+  position: relative;
+}
+
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 25px;
+  list-style: none;
+  padding: 6px 0;
+  width: 120px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+}
+
+.menu-wrapper:hover .menu-dropdown {
+  display: block;
+}
+
+.menu-dropdown li {
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.menu-dropdown li:hover {
+  background: #eef3ff;
+}
+
+.delete-action {
+  border: none;
+  background: none;
+  text-align: left;
+  width: 100%;
+  color: #e32a2a;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 992px) {
+  .doctor-card-wrapper {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .doctor-card-wrapper {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .doctor-card-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .doctor-header {
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* pagination csss */
+
+  /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap'); */
+/* *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} */
+/* body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #20B2AA;
+  min-height: 100vh;
+  padding: 10px;
+} */
+.doctpagination ul{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background: #fff;
+  padding: 8px;
+  border-radius: 50px;
+  box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+}
+.doctpagination ul li{
+  color: #20B2AA;
+  list-style: none;
+  line-height: 45px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  /* user-select: none; */
+  transition: all 0.3s ease;
+}
+.doctpagination ul li.numb{
+  list-style: none;
+  height: 45px;
+  width: 45px;
+  margin: 0 3px;
+  line-height: 45px;
+  border-radius: 50%;
+}
+.doctpagination ul li.numb.first{
+  margin: 0px 3px 0 -5px;
+}
+.doctpagination ul li.numb.last{
+  margin: 0px -5px 0 3px;
+}
+.doctpagination ul li.dots{
+  font-size: 22px;
+  cursor: default;
+}
+.doctpagination ul li.btn{
+  padding: 0 20px;
+  border-radius: 50px;
+}
+.doctpagination li.active,
+.doctpagination ul li.numb:hover,
+.doctpagination ul li:first-child:hover,
+.doctpagination ul li:last-child:hover{
+  color: #fff;
+  background: #20B2AA;}
+
+/* pagination css */

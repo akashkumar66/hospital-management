@@ -1,0 +1,130 @@
+.patient-profile-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.patient-profile-card {
+  width: 100%;
+  max-width: 850px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.patient-profile-header {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.patient-profile-form {
+  width: 100%;
+}
+
+.patient-photo-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.patient-photo-upload {
+  text-align: center;
+}
+
+.patient-photo-edit input {
+  display: none;
+}
+
+.patient-photo-edit label {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: #4a90e2;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.patient-photo-box {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin: 10px auto;
+  border: 3px solid #4a90e2;
+}
+
+.profile-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 15px;
+}
+
+.profile-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-field.full {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.profile-field label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.profile-field input,
+.profile-field select,
+.profile-field textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.profile-field textarea {
+  height: 70px;
+  resize: none;
+}
+
+.profile-field input:focus,
+.profile-field select:focus,
+.profile-field textarea:focus {
+  border-color: #4a90e2;
+}
+
+.profile-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-submit-btn {
+  background: #4a90e2;
+  color: #fff;
+  padding: 12px 28px;
+  border: none;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.profile-submit-btn:hover {
+  background: #3676bc;
+}
+
+@media (max-width: 768px) {
+  .profile-row {
+    flex-direction: column;
+  }
+}

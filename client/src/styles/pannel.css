@@ -1,0 +1,1456 @@
+  :root {
+            --primary-color: #009ef7;
+            --primary-light: #50cd89;
+            --sidebar-width: 260px;
+            --sidebar-width-collapsed: 80px;
+            --sidebar-bg: #ffffff;
+            --header-bg: #ffffff;
+            --body-bg: #e7edf6;
+            --card-bg: #ffffff;
+            --text-color: #3f4254;
+            --text-muted: #a1a5b7;
+            --border-color: #e4e6ef;
+            --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+            --transition-speed: 0.3s;
+            --menu-hover-bg: #f1f1f9;
+        }
+
+        body.vrdentadarktheme {
+            --sidebar-bg: #111111;
+            --header-bg: #111111;
+            --body-bg: #000000;
+            --card-bg: #111111;
+            --text-color: #e4e6ef;
+            --text-muted: #a1a5b7;
+            --border-color: #222222;
+            --shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.05);
+            --menu-hover-bg: #222222;
+        }
+
+        body.vrdentasemidarktheme {
+            --sidebar-bg: #111111;
+            --text-color: #3f4254;
+            --menu-hover-bg: #222222;
+        }
+
+        body.vrdentaborderedtheme .vrdentacard {
+            border: 1px solid var(--border-color) !important;
+            box-shadow: none !important;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--body-bg);
+            color: var(--text-color);
+            transition: background-color var(--transition-speed);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .vrdentacontainer{
+           
+            width:100vw ;
+        }
+
+        .vrdentawrapper {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .vrdentasidebar {
+            width: var(--sidebar-width);
+            min-height: 100vh;
+            background-color: var(--sidebar-bg);
+            transition: width var(--transition-speed), background-color var(--transition-speed), transform var(--transition-speed);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            padding-top: 20px;
+            border-right: 1px solid var(--border-color);
+            overflow-y: auto;
+            overflow-x: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .vrdentasidebaroverlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .vrdentamenulink {
+            transition: background-color 0.2s, color 0.2s, padding 0.2s;
+        }
+
+        .vrdentamenulink:hover,
+        .vrdentamenulink.vrdentaactive {
+            background-color: var(--menu-hover-bg);
+            color: var(--primary-color);
+        }
+
+        .vrdentacard {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transition: background-color var(--transition-speed), border-color var(--transition-speed), box-shadow var(--transition-speed), transform 0.3s;
+            height: fit-content;
+        }
+
+        .vrdentacard:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 1.5rem 2.5rem rgba(0, 0, 0, 0.15);
+        }
+
+        body.vrdentadarktheme .vrdentacard:hover {
+            box-shadow: 0 1.5rem 2.5rem rgba(255, 255, 255, 0.08);
+        }
+
+        .vrdentascrollablesection {
+            max-height: 350px;
+            overflow-y: auto;
+            padding-right: 5px;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .vrdentascrollablesection::-webkit-scrollbar {
+            display: none;
+        }
+
+        .vrdentagoalchartcontainer {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .vrdentagoalchartwrapper {
+            width: 150px;
+            min-width: 150px;
+            height: 150px;
+        }
+
+        .vrdentaiconstatcard {
+            transition: transform 0.2s;
+        }
+
+        .vrdentaiconstatcard:hover {
+            transform: scale(1.05);
+        }
+
+        .vrdentalistitem {
+            transition: background-color 0.2s;
+            cursor: default;
+        }
+
+        .vrdentalistitem:hover {
+            background-color: var(--menu-hover-bg);
+            border-radius: 8px;
+        }
+
+        .vrdentasidebarheader {
+            display: flex;
+            align-items: center;
+            padding: 0 20px 20px 20px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .vrdentasidebarheader i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .vrdentasidemenu {
+            list-style: none;
+            padding: 0 10px;
+        }
+
+        .vrdentamenuitem {
+            position: relative;
+            margin-bottom: 5px;
+        }
+
+        .vrdentamenulink {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            border-radius: 8px;
+            color: var(--text-color);
+            font-size: 0.95rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .vrdentamenulink i {
+            width: 30px;
+            text-align: center;
+            font-size: 1rem;
+            transition: margin-right 0.3s;
+        }
+
+        .vrdentamenulink span {
+            opacity: 1;
+            transition: opacity var(--transition-speed);
+        }
+
+        .vrdentamenuitem span.vrdentamenutext {
+            opacity: 1;
+            transition: opacity var(--transition-speed);
+        }
+
+        .vrdentamenuitem span.vrdentamenutext.vrdentamenutextheading {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            padding: 10px 15px 5px;
+            display: block;
+        }
+
+        .vrdentamenulink .vrdentaarrow {
+            margin-left: auto;
+            transition: transform 0.3s;
+        }
+
+        .vrdentamenuitem.vrdentaopen > .vrdentamenulink .vrdentaarrow {
+            transform: rotate(90deg);
+        }
+
+        .vrdentasubmenu {
+            list-style: none;
+            padding: 0;
+            padding-left: 45px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: rgba(0, 0, 0, 0.03);
+            border-radius: 0 0 8px 8px;
+        }
+
+        .vrdentamenuitem.vrdentaopen > .vrdentasubmenu {
+            max-height: 500px;
+        }
+
+        .vrdentasubmenulink {
+            display: block;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            color: var(--text-color);
+            transition: color 0.2s;
+        }
+
+        .vrdentasubmenulink:hover {
+            color: var(--primary-color);
+        }
+
+        /* NEW: Container-specific collapsed state */
+        .vrdentacontainer.vrdentacollapsed .vrdentasidebar {
+            width: var(--sidebar-width-collapsed);
+        }
+
+        .vrdentacontainer.vrdentacollapsed .vrdentasidebarheader,
+        .vrdentacontainer.vrdentacollapsed .vrdentamenutextheading,
+        .vrdentacontainer.vrdentacollapsed .vrdentamenulink span,
+        .vrdentacontainer.vrdentacollapsed .vrdentamenulink .vrdentaarrow,
+        .vrdentacontainer.vrdentacollapsed .vrdentasubmenu {
+            display: none !important;
+        }
+
+        .vrdentacontainer.vrdentacollapsed .vrdentamenulink {
+            justify-content: center;
+        }
+
+        .vrdentacontainer.vrdentacollapsed .vrdentamenulink i {
+            margin-right: 0;
+        }
+
+        .vrdentacontainer.vrdentacollapsed .vrdentamenuitem {
+            position: relative;
+        }
+
+        .vrdentacontainer.vrdentacollapsed .vrdentamenuitem:hover > .vrdentamenulink span {
+            display: block !important;
+            position: absolute;
+            left: var(--sidebar-width-collapsed);
+            top: 0;
+            padding: 10px 15px;
+            background-color: var(--sidebar-bg);
+            border-radius: 0 8px 8px 0;
+            box-shadow: var(--shadow);
+            z-index: 1010;
+            width: var(--sidebar-width);
+            text-align: left;
+        }
+
+        .vrdentamaincontent {
+            flex-grow: 1;
+            margin-left: var(--sidebar-width);
+            transition: margin-left var(--transition-speed);
+            padding: 0;
+            width: calc(100% - var(--sidebar-width));
+        }
+
+        .vrdentacontainer.vrdentacollapsed .vrdentamaincontent {
+            margin-left: var(--sidebar-width-collapsed);
+            width: calc(100% - var(--sidebar-width-collapsed));
+        }
+
+        .vrdentaheader {
+            position: sticky;
+            top: 0;
+            background-color: var(--header-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 999;
+            box-shadow: var(--shadow);
+        }
+
+        .vrdentaheaderleft {
+            display: flex;
+            align-items: center;
+        }
+
+        .vrdentamenutoggle {
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            cursor: pointer;
+            margin-right: 20px;
+            color: var(--text-color);
+            transition: color 0.2s;
+        }
+
+        .vrdentamenutoggle:hover {
+            color: var(--primary-color);
+        }
+
+        .vrdentasearchbox {
+            position: relative;
+        }
+
+        .vrdentasearchbox input {
+            padding: 8px 15px 8px 40px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            width: 300px;
+            transition: width 0.3s;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            background-color: var(--card-bg);
+        }
+
+        .vrdentasearchbox i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .vrdentaheaderright .vrdentaicongroup {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .vrdentaheaderright .vrdentaicongroup a,
+        .vrdentaheaderright .vrdentaicongroup button {
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            position: relative;
+            padding: 5px;
+            transition: color 0.2s;
+        }
+
+        .vrdentaheaderright .vrdentaicongroup a:hover,
+        .vrdentaheaderright .vrdentaicongroup button:hover {
+            color: var(--primary-color);
+        }
+
+        .vrdentabadge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #ff3e1d;
+            color: white;
+            border-radius: 50%;
+            font-size: 0.65rem;
+            width: 15px;
+            height: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translate(50%, -50%);
+        }
+
+        .vrdentaavatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .vrdentaavatar:hover {
+            transform: scale(1.05);
+        }
+
+        .vrdentadropdown {
+            position: relative;
+        }
+
+        .vrdentadropdownmenu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 250px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin-top: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+            z-index: 100;
+            padding: 10px 0;
+        }
+
+        .vrdentadropdown.vrdentaopen .vrdentadropdownmenu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .vrdentadropdownitem {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+
+        .vrdentadropdownitem i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
+        .vrdentadropdownitem:hover {
+            background-color: var(--menu-hover-bg);
+        }
+
+        .vrdentadashboardcontent {
+            padding: 30px;
+        }
+
+        .vrdentagrid {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .vrdentagrid41 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .vrdentagrid32 {
+            grid-template-columns: 3fr 2fr;
+        }
+
+        .vrdentagrid211 {
+            grid-template-columns: 2fr 1fr 1fr;
+        }
+
+        .vrdentagrid11 {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .vrdentagridusercharts {
+            grid-template-columns: 2fr 1fr;
+        }
+
+        .vrdentaspan2 {
+            grid-column: span 2;
+        }
+
+        .vrdentaspan3 {
+            grid-column: span 3;
+        }
+
+        .vrdentaspan4 {
+            grid-column: span 4;
+        }
+
+        .vrdentacardheader {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 0;
+            border-bottom: none;
+        }
+
+        .vrdentacardtitle {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .vrdentacardbody {
+            padding: 0;
+        }
+
+        .vrdentachartstats {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .vrdentachartstats .vrdentavalue {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .vrdentachartstats .vrdentachange {
+            font-size: 0.85rem;
+            margin-left: 10px;
+            font-weight: 600;
+        }
+
+        .vrdentachartstats .vrdentachange.vrdentaup {
+            color: var(--primary-light);
+        }
+
+        .vrdentachartstats .vrdentachange.vrdentadown {
+            color: #f1416c;
+        }
+
+        /* FIXED: Icon stat grid responsive behavior */
+        .vrdentaiconstatgrid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .vrdentaiconstatcard {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .vrdentastaticon {
+            width: 65px;
+            height: 65px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .vrdentastaticon.vrdentablue {
+            background-color: #009ef7;
+        }
+
+        .vrdentastaticon.vrdentagreen {
+            background-color: #50cd89;
+        }
+
+        .vrdentastaticon.vrdentapink {
+            background-color: #f1416c;
+        }
+
+        .vrdentastaticon.vrdentaorange {
+            background-color: #ffc700;
+        }
+
+        .vrdentastatvalue {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .vrdentastatlabel {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .vrdentauserchartcard {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .vrdentauserchartfooter {
+            margin-top: 15px;
+        }
+
+        .vrdentauserchartfooter p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .vrdentauserchartfooter .vrdentachange {
+            font-weight: 600;
+        }
+
+        .vrdentaprogresscirclewrapper {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 20px auto;
+        }
+
+        .vrdentaprogresscirclelabel {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .vrdentadoughnutstats {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .vrdentadoughnutstats .vrdentastatitem {
+            padding: 15px;
+            border-radius: 8px;
+            width: 50%;
+            transition: background-color 0.2s;
+        }
+
+        .vrdentadoughnutstats .vrdentastatitem h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .vrdentadoughnutstats .vrdentastatitem p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .vrdentalistgroup {
+            list-style: none;
+            padding: 0;
+        }
+
+        .vrdentalistitem {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        .vrdentalistitem:last-child {
+            border-bottom: none;
+        }
+
+        .vrdentalistitemcontent {
+            display: flex;
+            align-items: center;
+        }
+
+        .vrdentalistitemicon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: white;
+        }
+
+        .vrdentalistitemtitle {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .vrdentalistitemsubtitle {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .vrdentatransactionlist .vrdentalistitem {
+            align-items: flex-start;
+        }
+
+        .vrdentatransactionlist .vrdentalistitemicon {
+            font-size: 1.1rem;
+            border-radius: 50%;
+        }
+
+        .vrdentatransactionamount {
+            font-weight: 600;
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+
+        .vrdentatransactiondate {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .vrdentaproductlist .vrdentalistitem {
+            justify-content: space-between;
+        }
+
+        .vrdentaproductlist img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 15px;
+        }
+
+        .vrdentaproductinfo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .vrdentaproductsalecount {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .vrdentaproductprice {
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .vrdentasalessyearcard {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .vrdentasalessyearstats {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .vrdentasalessstatitem {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .vrdentasalessstatitem:last-child {
+            border-bottom: none;
+        }
+
+        .vrdentasalessstatlabel {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .vrdentasalessstatvalue {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .vrdentacustomizerdrawer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 350px;
+            height: 100%;
+            background-color: var(--card-bg);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            transform: translateX(100%);
+            transition: transform var(--transition-speed) ease-in-out;
+            z-index: 1100;
+            padding: 20px;
+            border-left: 1px solid var(--border-color);
+        }
+
+        .vrdentacustomizerdrawer.vrdentaopen {
+            transform: translateX(0);
+        }
+
+        .vrdentacustomizerheader {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .vrdentacustomizerheader h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .vrdentacustomizerclose {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .vrdentathemeoptions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .vrdentathemeoption {
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            cursor: pointer;
+            text-align: center;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .vrdentathemeoption:hover,
+        .vrdentathemeoption.vrdentaselected {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(0, 158, 247, 0.5);
+        }
+
+        .vrdentathemeoption .vrdentapreview {
+            width: 100%;
+            height: 60px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            display: flex;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .vrdentathemeoption .vrdentapreview .vrdentasidebarpreview {
+            width: 25%;
+            height: 100%;
+        }
+
+        .vrdentathemeoption .vrdentapreview .vrdentacontentpreview {
+            width: 75%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .vrdentathemeoption .vrdentapreview .vrdentaheaderpreview {
+            height: 25%;
+        }
+
+        .vrdentathemeoption .vrdentapreview .vrdentabodypreview {
+            height: 75%;
+        }
+
+        .vrdentathemelight .vrdentasidebarpreview {
+            background-color: #fff;
+        }
+
+        .vrdentathemelight .vrdentaheaderpreview {
+            background-color: #fff;
+        }
+
+        .vrdentathemelight .vrdentabodypreview {
+            background-color: #f4f6f9;
+        }
+
+        .vrdentathemelight .vrdentasidebarpreview {
+            background-color: #111111;
+        }
+
+        .vrdentathemelight .vrdentaheaderpreview {
+            background-color: #111111;
+        }
+
+        .vrdentathemelight .vrdentabodypreview {
+            background-color: #000000;
+        }
+
+        .vrdentathemesemidark .vrdentasidebarpreview {
+            background-color: #111111;
+        }
+
+        .vrdentathemesemidark .vrdentaheaderpreview {
+            background-color: #fff;
+        }
+
+        .vrdentathemesemidark .vrdentabodypreview {
+            background-color: #f4f6f9;
+        }
+
+        .vrdentathemebordered .vrdentasidebarpreview {
+            background-color: #fff;
+            border-right: 1px solid var(--primary-color);
+        }
+
+        .vrdentathemebordered .vrdentaheaderpreview {
+            background-color: #fff;
+            border-bottom: 1px solid var(--primary-color);
+        }
+
+        .vrdentathemebordered .vrdentabodypreview {
+            background-color: #f4f6f9;
+        }
+
+        .vrdentathemeoption p {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .vrdentacustomizebtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s;
+            z-index: 1050;
+        }
+
+        .vrdentacustomizebtn:hover {
+            transform: translateY(-2px);
+        }
+
+        .vrdentamaincontent .vrdentaformcontainer{
+            width: 100%;
+            background-color: #ffffff;
+            padding: 20px;
+
+           
+        }
+
+        /* NEW: Container-specific mobile behavior */
+        @media (max-width: 992px) {
+            .vrdentacontainer .vrdentasidebar {
+                transform: translateX(-100%);
+            }
+            
+            .vrdentacontainer .vrdentasidebar.vrdentamobileopen {
+                transform: translateX(0);
+            }
+            
+            .vrdentacontainer .vrdentasidebaroverlay.vrdentamobileopen {
+                display: block;
+            }
+            
+            .vrdentacontainer .vrdentamaincontent {
+                margin-left: 0;
+                width: 100%;
+            }
+            
+            .vrdentacontainer.vrdentacollapsed .vrdentamaincontent {
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+
+        /* FIXED: Responsive behavior for icon stat grid */
+        @media (max-width: 1200px) {
+            .vrdentagrid41 {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .vrdentagrid32 {
+                grid-template-columns: 1fr;
+            }
+            
+            .vrdentagrid211 {
+                grid-template-columns: 1fr;
+            }
+            
+            .vrdentagrid11 {
+                grid-template-columns: 1fr;
+            }
+            
+            .vrdentagridusercharts {
+                grid-template-columns: 1fr;
+            }
+            
+            .vrdentaspan2, .vrdentaspan3, .vrdentaspan4 {
+                grid-column: span 1;
+            }
+            
+            /* FIX: Keep icon stat grid in 2 columns on medium screens */
+            .vrdentaiconstatgrid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .vrdentasearchbox input {
+                width: 200px;
+            }
+            
+            .vrdentaheader {
+                padding: 15px 20px;
+            }
+            
+            .vrdentadashboardcontent {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .vrdentagrid41 {
+                grid-template-columns: 1fr;
+            }
+            
+            /* FIX: Keep icon stat grid in 2 columns on smaller screens */
+            .vrdentaiconstatgrid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .vrdentasearchbox {
+                display: none;
+            }
+            
+            .vrdentaheaderright .vrdentaicongroup {
+                gap: 10px;
+            }
+            
+            .vrdentagoalchartcontainer {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .vrdentadoughnutstats {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .vrdentadoughnutstats .vrdentastatitem {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            
+            .vrdentacustomizerdrawer {
+                width: 100%;
+            }
+            
+            .vrdentathemeoptions {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .vrdentaheader {
+                padding: 10px 15px;
+            }
+            
+            .vrdentadashboardcontent {
+                padding: 15px;
+            }
+            
+            .vrdentacard {
+                padding: 15px;
+            }
+            
+            .vrdentacardheader {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .vrdentachartstats {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .vrdentalistitem {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .vrdentalistitemcontent {
+                width: 100%;
+            }
+            
+            .vrdentacustomizebtn {
+                bottom: 15px;
+                right: 15px;
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+            
+            /* FIX: Change to 2 rows on very small screens */
+            .vrdentaiconstatgrid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* FIX: Change to 2 rows on extra small screens */
+            .vrdentaiconstatgrid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* UPDATED: Table Styles with Horizontal and Vertical Scroll */
+        .vrdentatablecontainer {
+            overflow: auto;
+            margin-top: 20px;
+            max-height: 500px;
+            position: relative;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .vrdentatablecontainer::-webkit-scrollbar {
+            display: none;
+        }
+
+        .vrdentatable {
+            width: 100%;
+            min-width: 1000px; /* Ensures horizontal scrolling on smaller screens */
+            border-collapse: collapse;
+            background-color: var(--card-bg);
+        }
+
+        .vrdentatable thead {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .vrdentatable th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            padding: 15px;
+            text-align: left;
+            position: sticky;
+            top: 0;
+            white-space: nowrap;
+        }
+
+        .vrdentatable td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+            white-space: nowrap;
+        }
+
+        .vrdentatable tr:last-child td {
+            border-bottom: none;
+        }
+
+        .vrdentatable tr:hover {
+            background-color: var(--menu-hover-bg);
+        }
+
+        .vrdentatable img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .vrdentastatus {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .vrdentastatus-active {
+            background-color: rgba(80, 205, 137, 0.2);
+            color: var(--primary-light);
+        }
+
+        .vrdentastatus-inactive {
+            background-color: rgba(241, 65, 108, 0.2);
+            color: #f1416c;
+        }
+
+        .vrdentastatus-pending {
+            background-color: rgba(255, 199, 0, 0.2);
+            color: #ffc700;
+        }
+
+        /* NEW: Content sections */
+        .vrdentacontentsection {
+            display: none;
+        }
+
+        .vrdentacontentsection.active {
+            display: block;
+        }
+
+        /* NEW: Table actions */
+        .vrdentatableactions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .vrdentatablebtn {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.2s;
+        }
+
+        .vrdentatablebtn-edit {
+            background-color: rgba(0, 158, 247, 0.1);
+            color: var(--primary-color);
+        }
+
+        .vrdentatablebtn-delete {
+            background-color: rgba(241, 65, 108, 0.1);
+            color: #f1416c;
+        }
+
+        .vrdentatablebtn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* NEW: Premium sidebar enhancements */
+        .vrdentamenuitem.vrdentaopen .vrdentamenulink {
+            background-color: var(--menu-hover-bg);
+            color: var(--primary-color);
+        }
+
+        .vrdentamenuitem.vrdentaopen .vrdentamenulink i {
+            color: var(--primary-color);
+        }
+
+        .vrdentamenulink.vrdentaactive {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .vrdentamenulink.vrdentaactive i {
+            color: white;
+        }
+
+        .vrdentasubmenulink.vrdentaactive {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+
+
+
+
+
+
+
+
+
+        /* here is the code to make the form interactivity changes */
+
+
+
+
+
+        /* Doctor Profile Form Styles */
+.vrdentaformcontainer {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.vrdentaformcontainer h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.vrdentaformrow {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.vrdentaformgroup {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.vrdentaformgroup label {
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 6px;
+}
+
+.vrdentaformgroup input,
+.vrdentaformgroup select,
+.vrdentaformgroup textarea {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--body-bg);
+    color: var(--text-color);
+    font-size: 0.95rem;
+    outline: none;
+    transition: all var(--transition-speed);
+}
+
+.vrdentaformgroup input:focus,
+.vrdentaformgroup select:focus,
+.vrdentaformgroup textarea:focus {
+    border-color: var(--primary-color);
+    background-color: var(--card-bg);
+    box-shadow: 0 0 0 2px rgba(0, 158, 247, 0.1);
+}
+
+.vrdentaformgroup textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.vrdentagendergroup {
+    display: flex;
+    gap: 20px;
+    margin-top: 8px;
+}
+
+.vrdentagendergroup label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.vrdentagendergroup input[type="radio"] {
+    accent-color: var(--primary-color);
+    width: 16px;
+    height: 16px;
+}
+
+.vrdentaformavatar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.vrdentaformavatar img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    object-fit: cover;
+}
+
+.vrdentaformavatar button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.vrdentaformavatar button:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+.vrdentaformsubmit {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.vrdentaformsubmit button {
+    padding: 14px 25px;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.vrdentaformsubmit button:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .vrdentaformrow {
+        flex-direction: column;
+    }
+
+    .vrdentaformgroup {
+        width: 100%;
+    }
+}

@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.patient-wrapper {
+  width: 100%;
+  background: #e0f7fa; /* soft cyan background */
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.patient-container {
+  width: 100%;
+  max-width: 950px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 18px rgba(0, 128, 128, 0.15); /* subtle teal shadow */
+}
+
+.patient-container header {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #00796b; /* deep teal for header */
+  margin-bottom: 12px;
+}
+
+.patient-form {
+  margin-top: 25px;
+}
+
+.patient-form .row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.patient-form .field {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.patient-form label {
+  font-weight: 500;
+  color: #004d40; /* dark teal for labels */
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.patient-form input,
+.patient-form select,
+.patient-form textarea {
+  width: 100%;
+  border: 1px solid #b2dfdb; /* lighter teal border */
+  background: #e0f2f1; /* soft teal input background */
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  color: #004d40; /* dark text inside input */
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.patient-form input:focus,
+.patient-form select:focus,
+.patient-form textarea:focus {
+  border-color: #00796b; /* highlight on focus */
+  background: #ffffff;
+}
+
+.patient-form textarea {
+  resize: none;
+  height: 85px;
+}
+
+/* File Upload Styling */
+.patient-form input[type="file"] {
+  padding: 8px;
+  background: #ffffff;
+  cursor: pointer;
+  border: 1px solid #b2dfdb;
+  border-radius: 6px;
+}
+
+/* Submit Button */
+.patient-form .actions {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.patient-form .actions button {
+  width: 100%;
+  padding: 15px;
+  background: #00796b; /* deep teal button */
+  border: none;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.patient-form .actions button:hover {
+  background: #004d40; /* darker teal on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .patient-container {
+    padding: 18px;
+  }
+
+  .patient-form .row {
+    flex-direction: column;
+  }
+}
